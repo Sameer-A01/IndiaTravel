@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladakh Adventure | Tour Itinerary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2d3436;
+            --secondary: #e84393;
+            --accent: #0984e3;
+            --light: #f5f6fa;
+            --dark: #2d3436;
+            --text: #636e72;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(45, 52, 54, 0.7), rgba(45, 52, 54, 0.7)), 
+                        url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExIWFhUVFhgXGBcYFxgaGBcXGBgYFhgXGBoZHSggGB4lGxUXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGzImICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBFAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAAIDBQYBBwj/xABBEAABAwIEAwYEAwYFAgcAAAABAAIRAyEEEjFBBVFhBiJxgZGhEzKxwULR8BQjUmLh8QcVM3KCFpIXQ6KywuLy/8QAGgEAAgMBAQAAAAAAAAAAAAAAAQIAAwQFBv/EAC4RAAICAQMDAgUDBQEAAAAAAAABAhEDEiExBEFRExQFImGBkXGhsRUyQvDxUv/aAAwDAQACEQMRAD8A89DU4BODU4BehSPPuQ0BdhOhKE1C2NhKE6EoUoljIShSQllUolkcJZVLlShGiWR5UsqkyruVGgaiPKu5VJlXQ1GgahmVODU8NTg1MkK5EYanhqeGpwamoRyI8qcGqQNXQ1EVyIw1ODVIGroaoK5DWWRuFdOpvshwxGYHAvqEhjSSASfAffoo6DG29j0/slw98BzqmYESBrHmtl+zN5LE_Edit');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: -10rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .rating {
+            margin: 1rem 0;
+            color: #fdcb6e;
+            font-size: 1.2rem;
+        }
+        
+        .price-tag {
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(232, 67, 147, 0.4);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 12rem auto 5rem;
+            padding: 0 2rem;
+        }
+        
+        .itinerary-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .itinerary-details {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position5rem;
+            margin-top: 3rem;
+        }
+        
+        .itinerary-details {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 1;
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .itinerary-details:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .itinerary-details::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--secondary), var(--accent));
+            border-radius: 10px 0 0 10px;
+        }
+        
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            height: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .map-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(9, 132, 227, 0.1), rgba(232, 67, 147, 0.1));
+            pointer-events: none;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .itinerary-day {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .itinerary-day:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transform: translateX(5px);
+        }
+        
+        .itinerary-day h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .itinerary-day h3 i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .itinerary-day p {
+            margin-left: 1.8rem;
+            position: relative;
+        }
+        
+        .itinerary-day p::before {
+            content: '•';
+            position: absolute;
+            left: -1.2rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .price-box {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            padding: 2rem;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 10px 20px rgba(9, 132, 227, 0.3);
+        }
+        
+        .price-box .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+        
+        .book-btn {
+            display: inline-block;
+            background: white;
+            color: var(--accent);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+        }
+        
+        .book-btn:hover {
+            background: var(--dark);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .highlights {
+            margin: 4rem 0;
+        }
+        
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .highlight-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .highlight-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                margin-top: 8rem;
+            }
+            
+            .map-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ladakh Adventure</h1>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span> (128 Reviews)</span>
+            </div>
+            <p>Breathtaking landscapes, Buddhist monasteries, and thrilling adventure activities</p>
+            <div class="price-tag">From ₹12,999</div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <h2 class="section-title">Your Himalayan Adventure</h2>
+        <p>Embark on an unforgettable 5-day journey through the rugged terrains of Ladakh, exploring ancient monasteries, pristine lakes, and thrilling adventure spots.</p>
+        
+        <div class="itinerary-container">
+            <div class="itinerary-details">
+                <div class="itinerary-day">
+                    <h3><i class="fas fa-plane-arrival"></i> Day 1: Arrival in Leh</h3>
+                    <p>Arrival at Leh Kushok Bakula Rimpochee Airport</p>
+                    <p>Acclimatization at your hotel with welcome tea</p>
+                    <p>Evening visit to Shanti Stupa for panoramic views</p>
+                    <p>Dinner with traditional Ladakhi cuisine</p>
+                </div>
+                
+                <div class="itinerary-day">
+                    <h3><i class="fas fa-pray"></i> Day 2: Monastery Tour</h3>
+                    <p>Visit Thiksey Monastery for morning prayers</p>
+                    <p>Explore Hemis Monastery, the largest in Ladakh</p>
+                    <p>Afternoon at Shey Palace and its giant Buddha statue</p>
+                    <p>Evening stroll through Leh Market</p>
+                </div>
+                
+                <div class="itinerary-day">
+                    <h3><i class="fas fa-mountain"></i> Day 3: Nubra Valley Adventure</h3>
+                    <p>Drive to Nubra Valley via Khardung La Pass</p>
+                    <p>Visit Diskit Monastery and its Maitreya Buddha</p>
+                    <p>Camel safari on Bactrian camels at Hunder</p>
+                    <p>Overnight camping under the stars</p>
+                </div>
+                
+                <div class="itinerary-day">
+                    <h3><i class="fas fa-water"></i> Day 4: Pangong Lake</h3>
+                    <p>Scenic drive to Pangong Tso Lake</p>
+                    <p>Photography and leisure time by the lake</p>
+                    <p>Visit local villages en route</p>
+                    <p>Return to Leh for overnight stay</p>
+                </div>
+                
+                <div class="itinerary-day">
+                    <h3><i class="fas fa-plane-departure"></i> Day 5: Departure</h3>
+                    <p>Morning yoga session with mountain views</p>
+                    <p>Free time for last-minute shopping in Leh</p>
+                    <p>Transfer to airport with farewell souvenirs</p>
+                </div>
+                
+                <div class="price-box">
+                    <p>Starting from</p>
+                    <div class="price">₹12,999</div>
+                    <p>per person (double occupancy)</p>
+                    <a href="#" class="book-btn">Book This Adventure</a>
+                </div>
+            </div>
+            
+            <div class="map-container" id="map"></div>
+        </div>
+        
+        <div class="highlights">
+            <h2 class="section-title">Experience Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>High Passes</h3>
+                    <p>Cross Khardung La, one of the highest motorable passes</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-pray"></i>
+                    <h3>Monasteries</h3>
+                    <p>Explore ancient Buddhist monasteries and culture</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-water"></i>
+                    <h3>Pangong Lake</h3>
+                    <p>Visit the stunning blue waters of Pangong Tso</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-camel"></i>
+                    <h3>Camel Safari</h3>
+                    <p>Ride Bactrian camels in Nubra Valley</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Ladakh Adventures. All rights reserved.</p>
+    </footer>
+
+    <!-- Google Maps API -->
+    <script>
+        function initMap() {
+            // Coordinates for Leh, Ladakh
+            const ladakh = { lat: 34.1526, lng: 77.5771 };
+            
+            // Create styled map
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: ladakh,
+                styles: [
+                    {
+                        "featureType": "all",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "saturation": 36
+                            },
+                            {
+                                "color": "#333333"
+                            },
+                            {
+                                "lightness": 40
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "all",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [
+                            {
+                                "visibility": "on"
+                            },
+                            {
+                                "color": "#ffffff"
+                            },
+                            {
+                                "lightness": 16
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "all",
+                        "elementType": "labels.icon",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#fefefe"
+                            },
+                            {
+                                "lightness": 20
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "color": "#fefefe"
+                            },
+                            {
+                                "lightness": 17
+                            },
+                            {
+                                "weight": 1.2
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#f5f5f5"
+                            },
+                            {
+                                "lightness": 20
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#f5f5f5"
+                            },
+                            {
+                                "lightness": 21
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#e3f2fd"
+                            },
+                            {
+                                "lightness": 21
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            },
+                            {
+                                "lightness": 17
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            },
+                            {
+                                "lightness": 29
+                            },
+                            {
+                                "weight": 0.2
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            },
+                            {
+                                "lightness": 18
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.local",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            },
+                            {
+                                "lightness": 16
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#f2f2f2"
+                            },
+                            {
+                                "lightness": 19
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#bbdefb"
+                            },
+                            {
+                                "lightness": 17
+                            }
+                        ]
+                    }
+                ]
+            });
+            
+            // Add custom marker
+            const marker = new google.maps.Marker({
+                position: ladakh,
+                map: map,
+                title: "Leh, Ladakh",
+                icon: {
+                    url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                    scaledSize: new google.maps.Size(40, 40)
+                }
+            });
+            
+            // Add info window
+            const infowindow = new google.maps.InfoWindow({
+                content: '<div style="padding:10px;"><h3 style="margin:0;color:#e84393;">Leh, Ladakh</h3><p style="margin:5px 0;">Gateway to the Himalayan Adventure</p></div>'
+            });
+            
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
+        }
+    </script>
+    
+    <!-- Load Google Maps API (replace YOUR_API_KEY with your actual API key) -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</body>
+</html>
